@@ -19,12 +19,14 @@ export const List = () => {
   // useGetContactsByNameQuery(filter);
 
   useEffect(() => {
-    setFilteredList(prevState => {
-      return contacts.filter(contact =>
-        contact.name.toLowerCase().includes(filter)
-      );
-    });
-  }, [filter, contacts]);
+    if (!isLoading) {
+      setFilteredList(prevState => {
+        return contacts.filter(contact =>
+          contact.name.toLowerCase().includes(filter)
+        );
+      });
+    }
+  }, [filter, contacts, isLoading]);
 
   const handleDelete = async id => {
     try {
