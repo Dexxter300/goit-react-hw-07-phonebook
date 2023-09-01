@@ -4,6 +4,14 @@ import css from './filter.module.css';
 export const Filter = ({ handleFilter }) => {
   const filter = useSelector(state => state.filter.filter);
 
+  // useEffect(() => {
+  //   setFilteredList(prevState => {
+  //     return contacts.filter(contact =>
+  //       contact.name.toLowerCase().includes(filter)
+  //     );
+  //   });
+  // }, [filter, contacts]);
+
   return (
     <div className={css.filter}>
       <label className={css.filterLabel}>
